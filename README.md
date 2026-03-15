@@ -121,20 +121,35 @@ Use a **long and complex `JWT_SECRET`** in production environments for better se
 
 project-root
 │
+
 ├── backend
+
 │   ├── controllers
+
 │   ├── models
+
 │   ├── routes
+
 │   ├── middleware
+
 │   ├── uploads
+
 │   └── server.js
+
 │
+
 ├── frontend
+
 │   ├── components
+
 │   ├── context
+
 │   ├── pages
+
 │   └── utils
+
 │
+
 └── README.md
 
 --- 
