@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": ["esnext"],
+    "types": ["node"],
+    
+    "outDir": "./dist",
+    "rootDir": "./", 
+
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    
+    /* In do lines ko dhyan se dekhein */
+    "verbatimModuleSyntax": false, 
+    "isolatedModules": true,
+
+    "sourceMap": true,
+    "declaration": true,
+    "moduleDetection": "force"
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", ".next"]
+}
