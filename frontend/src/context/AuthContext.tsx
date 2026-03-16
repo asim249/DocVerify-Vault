@@ -18,7 +18,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
-  // Page refresh par user data recover karein
+  // Page refresh par user data recover karne ke liye
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
     

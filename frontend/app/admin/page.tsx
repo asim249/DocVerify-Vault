@@ -12,13 +12,11 @@ export default function AdminDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [isDeleting, setIsDeleting] = useState<string | null>(null);
 
-  // 1. Fetch Real Data from Backend
   const fetchAllDocs = async () => {
     setIsLoading(true);
     try {
-      const url = search 
-        ? `http://localhost:2000/api/documents/admin/documents?hash=${search}`
-        : `http://localhost:2000/api/documents/admin/documents`;
+      const queryParam = search ? `?hash=${encodeURIComponent(search)}` : "";
+    const url = `http://localhost:2000/api/documents/admin/documents${queryParam}`;
 
       const res = await fetch(url, {
         credentials: 'include', 
@@ -35,10 +33,13 @@ export default function AdminDashboard() {
   };
 
   useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
     fetchAllDocs();
-  }, [search]); // Jab user search kare toh API dobara hit ho (Optional)
+  }, 500);
 
-  // 2. Real Delete Logic
+  return () => clearTimeout(delayDebounceFn);
+  }, [search]); 
+
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to permanently delete this document?')) return;
 

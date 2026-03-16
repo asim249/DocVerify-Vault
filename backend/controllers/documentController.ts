@@ -10,7 +10,8 @@ export const uploadDocument = async (req: Request, res: Response) => {
 
     const filePath = path.join(req.file.destination, req.file.filename);
     const fileHash = generateFileHash(filePath);
-
+    const existingDoc = await Document.findOne({ fileHash: fileHash });
+    if(existingDoc) return res.status(400).json({ message: "File already exists" })  
     const document = new Document({
       userId: (req as any).user.id,
       fileName: req.file.originalname,
@@ -71,7 +72,13 @@ export const getAllDocuments = async (req: Request, res: Response) => {
     const {hash} = req.query
     let query = {}
     if(hash){
-        query = {fileHash: hash}
+       query = { 
+          $or:[
+            {fileHash: { $regex: hash, $options: "i" }},
+            {fileName: { $regex: hash, $options: "i" }},
+            {user: { $regex: hash, $options: "i" }}
+          ]
+        };
     }
     const docs = await Document.find(query).populate("userId", "name email").sort({ createdAt: -1 });
     res.json(docs);

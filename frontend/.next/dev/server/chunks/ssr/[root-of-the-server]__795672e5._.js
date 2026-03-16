@@ -16,26 +16,6 @@ __turbopack_context__.s([
     "formatBytes",
     ()=>formatBytes
 ]);
-// import { clsx, type ClassValue } from 'clsx';
-// import { twMerge } from 'tailwind-merge';
-// export function cn(...inputs: ClassValue[]) {
-//   return twMerge(clsx(inputs));
-// }
-// export function formatBytes(bytes: number, decimals = 2) {
-//   if (bytes === 0) return '0 Bytes';
-//   const k = 1024;
-//   const dm = decimals < 0 ? 0 : decimals;
-//   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-//   const i = Math.floor(Math.log(bytes) / Math.log(k));
-//   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-// }
-// export async function calculateHash(file: File): Promise<string> {
-//   const arrayBuffer = await file.arrayBuffer();
-//   const hashBuffer = await crypto.subtle.digest('SHA-256', arrayBuffer);
-//   const hashArray = Array.from(new Uint8Array(hashBuffer));
-//   const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-//   return hashHex;
-// }
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$clsx$2f$dist$2f$clsx$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/clsx/dist/clsx.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$tailwind$2d$merge$2f$dist$2f$bundle$2d$mjs$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/tailwind-merge/dist/bundle-mjs.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$crypto$2d$js$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/crypto-js/index.js [app-ssr] (ecmascript)"); // Library import karein

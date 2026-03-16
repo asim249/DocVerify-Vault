@@ -16,7 +16,7 @@ export default function ProtectedRoute({ children }: { children: React.ReactNode
     }
   }, [user, isLoading, router]);
 
-  // Jab tak check ho raha hai, loading dikhao
+  // Jab tak check ho raha hai, loading par bhejo
   if (isLoading) {
     return (
       <div className="h-screen w-full flex flex-col items-center justify-center bg-black text-white">

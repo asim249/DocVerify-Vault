@@ -190,5 +190,11 @@ project-root
 5. If hashes match, the document metadata and hash are stored in MongoDB.
 6. Later, users can upload the same document again to verify authenticity.
 
+## 🎥 Demo
+
+![DocVerify Vault](./gif/DocVerify%20Volt.gif)
+
+---
+
 ### 👨‍💻 Developer
 Asim Mir Full-Stack Web Developer with cyber-security.
